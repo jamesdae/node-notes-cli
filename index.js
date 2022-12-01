@@ -12,4 +12,8 @@ fs.readFile('data.json', 'utf8', (err, data) => {
     console.log(numbers[i]+ ': '+obj.notes[i+1]);
   }
   }
+  if (process.argv[2]==='create'){
+    process.argv[3]
+
+  }
 })
