@@ -13,7 +13,17 @@ fs.readFile('data.json', 'utf8', (err, data) => {
   }
   }
   if (process.argv[2]==='create'){
-    process.argv[3]
+
+    let note = process.argv[3];
+    obj.notes[obj.nextId] = note;
+    obj.nextId++;
+    let newObj = JSON.stringify(obj, null, 2);
+    fs.writeFile('data.json', newObj , 'json', err => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    });
 
   }
 })
